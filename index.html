@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Counter with stop button</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	
+	<h1></h1>
+	<button>Stop</button>
+
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script>
+		let num= 10;
+	
+		let counter = setInterval(function(){
+			$('h1').html(num);
+			num--;
+
+			if(num < 0){
+				clearInterval(counter);
+			}
+		}, 1000);
+
+	$('button').click(function(){
+			clearInterval(counter);
+		});
+
+	</script>
+</body>
+</html>
